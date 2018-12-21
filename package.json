@@ -1,0 +1,20 @@
+{
+  "name": "hurricaneholes",
+  "version": "1.0.0",
+  "description": "Hurricane Holes website",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Jonathan Rusk",
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bulma": "^0.7.2",
+    "next": "^7.0.2",
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
