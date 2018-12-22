@@ -2,6 +2,10 @@
   "name": "hurricaneholes",
   "version": "1.0.0",
   "description": "Hurricane Holes website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrusk/hurricaneholes.git"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
