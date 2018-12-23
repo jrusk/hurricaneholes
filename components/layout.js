@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import '../styles/styles.sass';
 
-export default ({children}) => {
+export default ({ pathname, children }) => {
   /*
    * Added this to toggle the is-active class. See:
    *
@@ -14,6 +15,9 @@ export default ({children}) => {
     document.querySelector('#navbarmenu').classList.toggle('is-active');
   };
 
+  const active = 'navbar-item is-tab is-active';
+  const inactive = 'navbar-item is-tab';
+
   return (
     <div>
       <Head>
@@ -24,9 +28,11 @@ export default ({children}) => {
       <header>
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
-            <a className="navbar-item">
-              <img src="/static/hurricane_holes_logo.png" />
-            </a>
+            <Link prefetch href="/">
+              <a className="navbar-item">
+                <img src="/static/hurricane_holes_logo.png" />
+              </a>
+            </Link>
             <a
               id="burger"
               onClick={toggleStyles}
@@ -43,10 +49,15 @@ export default ({children}) => {
           <div id="navbarmenu" className="navbar-menu">
             <div className="navbar-start">
               <Link prefetch href="/">
-                <a className="navbar-item">Home</a>
+                <a className={pathname === '/' ? active : inactive}>Home</a>
               </Link>
               <Link prefetch href="/rigs">
-                <a className="navbar-item">Rigs</a>
+                <a className={pathname === '/rigs' ? active : inactive}>Rigs</a>
+              </Link>
+              <Link prefetch href="/utilities">
+                <a className={pathname === '/utilities' ? active : inactive}>
+                  Utilities
+                </a>
               </Link>
             </div>
             <div className="navbar-end">
@@ -57,11 +68,13 @@ export default ({children}) => {
           </div>
         </nav>
       </header>
-      {children}
+      <section className="section">
+        <div className="container">{children}</div>
+      </section>
       <footer className="footer">
         <div className="content has-text-centered">
           <span>
-            Tel: (602) 943-3674 | email:{' '}
+            Tel: (602) 943-3674 | Email:{' '}
             <a href="mailto:info@hurricaneholes.com" target="_top">
               info@hurricaneholes.com
             </a>
