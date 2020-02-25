@@ -1,4 +1,3 @@
-//import Layout from '../components/layout'
 import React from 'react';
 
 export default class Error extends React.Component {

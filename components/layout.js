@@ -23,14 +23,14 @@ export default ({ pathname, children }) => {
       <Head>
         <title>Hurricane Holes</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
       </Head>
       <header>
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <Link href="/">
               <a className="navbar-item">
-                <img src="/static/hurricane_holes_logo.png" />
+                <img src="hurricane_holes_logo.png" />
               </a>
             </Link>
             <a

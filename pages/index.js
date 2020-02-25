@@ -1,10 +1,9 @@
 import React from 'react';
-//import Layout from '../components/layout';
 
 export default () => (
   <div>
     <h1 className="title">Welcome to Hurricane Holes</h1>
-    <img src="static/jeep.jpg" className="headerImage" />
+    <img src="jeep.jpg" className="headerImage" />
     <p>We drill holes in dirt.</p>
     <br />
     <h3 className="subtitle">Contact</h3>
