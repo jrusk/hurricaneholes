@@ -28,7 +28,7 @@ export default ({ pathname, children }) => {
       <header>
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
-            <Link prefetch href="/">
+            <Link href="/">
               <a className="navbar-item">
                 <img src="/static/hurricane_holes_logo.png" />
               </a>
@@ -48,13 +48,13 @@ export default ({ pathname, children }) => {
           </div>
           <div id="navbarmenu" className="navbar-menu">
             <div className="navbar-start">
-              <Link prefetch href="/">
+              <Link href="/">
                 <a className={pathname === '/' ? active : inactive}>Home</a>
               </Link>
-              <Link prefetch href="/rigs">
+              <Link href="/rigs">
                 <a className={pathname === '/rigs' ? active : inactive}>Rigs</a>
               </Link>
-              <Link prefetch href="/utilities">
+              <Link href="/utilities">
                 <a className={pathname === '/utilities' ? active : inactive}>
                   Utilities
                 </a>

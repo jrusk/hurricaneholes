@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 
 import Layout from '../components/Layout';
 
@@ -7,11 +7,9 @@ class MyApp extends App {
     const { Component, pageProps, router } = this.props;
 
     return (
-      <Container>
-        <Layout {...pageProps} pathname={router.pathname}>
-          <Component {...pageProps} />
-        </Layout>
-      </Container>
+      <Layout {...pageProps} pathname={router.pathname}>
+        <Component {...pageProps} />
+      </Layout>
     );
   }
 }
