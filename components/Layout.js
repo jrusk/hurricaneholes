@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Router from 'next/router';
-import '../styles/styles.sass';
+import Head from "next/head";
+import Link from "next/link";
+import Router from "next/router";
+import "../styles/styles.sass";
 
-export default ({ pathname, children }) => {
+const Layout = ({ pathname, children }) => {
   /*
    * Added this to toggle the is-active class. See:
    *
@@ -11,12 +11,12 @@ export default ({ pathname, children }) => {
    * https://github.com/jgthms/bulma/issues/856
    */
   const toggleStyles = event => {
-    document.querySelector('#burger').classList.toggle('is-active');
-    document.querySelector('#navbarmenu').classList.toggle('is-active');
+    document.querySelector("#burger").classList.toggle("is-active");
+    document.querySelector("#navbarmenu").classList.toggle("is-active");
   };
 
-  const active = 'navbar-item is-tab is-active';
-  const inactive = 'navbar-item is-tab';
+  const active = "navbar-item is-tab is-active";
+  const inactive = "navbar-item is-tab";
 
   return (
     <div>
@@ -40,7 +40,8 @@ export default ({ pathname, children }) => {
               className="navbar-burger burger"
               aria-label="menu"
               aria-expanded="false"
-              data-target="navbarmenu">
+              data-target="navbarmenu"
+            >
               <span aria-hidden="true" />
               <span aria-hidden="true" />
               <span aria-hidden="true" />
@@ -49,13 +50,13 @@ export default ({ pathname, children }) => {
           <div id="navbarmenu" className="navbar-menu">
             <div className="navbar-start">
               <Link href="/">
-                <a className={pathname === '/' ? active : inactive}>Home</a>
+                <a className={pathname === "/" ? active : inactive}>Home</a>
               </Link>
               <Link href="/rigs">
-                <a className={pathname === '/rigs' ? active : inactive}>Rigs</a>
+                <a className={pathname === "/rigs" ? active : inactive}>Rigs</a>
               </Link>
               <Link href="/utilities">
-                <a className={pathname === '/utilities' ? active : inactive}>
+                <a className={pathname === "/utilities" ? active : inactive}>
                   Utilities
                 </a>
               </Link>
@@ -74,7 +75,7 @@ export default ({ pathname, children }) => {
       <footer className="footer">
         <div className="content has-text-centered">
           <span>
-            Tel: (602) 943-3674 | Email:{' '}
+            Tel: (602) 943-3674 | Email:{" "}
             <a href="mailto:info@hurricaneholes.com" target="_top">
               info@hurricaneholes.com
             </a>
@@ -84,3 +85,5 @@ export default ({ pathname, children }) => {
     </div>
   );
 };
+
+export default Layout;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default () => (
+const Index = () => (
   <div>
     <h1 className="title">Welcome to Hurricane Holes</h1>
     <img src="jeep.jpg" className="headerImage" />
@@ -17,10 +17,12 @@ export default () => (
       <strong>Fax:</strong> (602) 944-2293
     </p>
     <p>
-      <strong>Email:</strong>{' '}
+      <strong>Email:</strong>{" "}
       <a href="mailto:info@hurricaneholes.com" target="_top">
         info@hurricaneholes.com
       </a>
     </p>
   </div>
 );
+
+export default Index;
