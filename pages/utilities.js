@@ -1,11 +1,14 @@
-import React from 'react';
+import Image from "next/image";
+import { Anchor, Heading, Paragraph } from "grommet";
 
-export default () => (
+const Utilities = () => (
   <div>
-    <h1 className="title">Utilities</h1>
-    <p>
-      You must concact Arizona 811 (Arizona Bluestake) before we dig:{' '}
-      <a href="http://www.azbluestake.com">Arizona 811</a>
-    </p>
+    <Heading>Utilities</Heading>
+    <Paragraph fill={true}>
+      You must concact Arizona 811 (Arizona Bluestake) before we dig:{" "}
+      <Anchor href="http://www.arizona811.com">Arizona 811</Anchor>.
+    </Paragraph>
   </div>
 );
+
+export default Utilities;

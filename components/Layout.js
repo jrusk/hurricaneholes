@@ -1,22 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
-import "../styles/styles.sass";
+import Image from "next/image";
+import { Anchor, Box, Footer, Nav } from "grommet";
 
 const Layout = ({ pathname, children }) => {
-  /*
-   * Added this to toggle the is-active class. See:
-   *
-   * https://bulma.io/documentation/components/navbar/#navbar-menu
-   * https://github.com/jgthms/bulma/issues/856
-   */
-  const toggleStyles = event => {
-    document.querySelector("#burger").classList.toggle("is-active");
-    document.querySelector("#navbarmenu").classList.toggle("is-active");
+  const borderActive = {
+    color: "#3273DC",
+    size: "medium",
+    side: "bottom"
   };
-
-  const active = "navbar-item is-tab is-active";
-  const inactive = "navbar-item is-tab";
 
   return (
     <div>
@@ -25,63 +18,40 @@ const Layout = ({ pathname, children }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
       </Head>
-      <header>
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-          <div className="navbar-brand">
-            <Link href="/">
-              <a className="navbar-item">
-                <img src="hurricane_holes_logo.png" />
-              </a>
-            </Link>
-            <a
-              id="burger"
-              onClick={toggleStyles}
-              role="button"
-              className="navbar-burger burger"
-              aria-label="menu"
-              aria-expanded="false"
-              data-target="navbarmenu"
-            >
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-            </a>
-          </div>
-          <div id="navbarmenu" className="navbar-menu">
-            <div className="navbar-start">
-              <Link href="/">
-                <a className={pathname === "/" ? active : inactive}>Home</a>
-              </Link>
-              <Link href="/rigs">
-                <a className={pathname === "/rigs" ? active : inactive}>Rigs</a>
-              </Link>
-              <Link href="/utilities">
-                <a className={pathname === "/utilities" ? active : inactive}>
-                  Utilities
-                </a>
-              </Link>
-            </div>
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <div className="buttons" />
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <section className="section">
-        <div className="container">{children}</div>
-      </section>
-      <footer className="footer">
-        <div className="content has-text-centered">
-          <span>
-            Tel: (602) 943-3674 | Email:{" "}
-            <a href="mailto:info@hurricaneholes.com" target="_top">
-              info@hurricaneholes.com
-            </a>
-          </span>
-        </div>
-      </footer>
+      <Nav direction="row" background="light-1" pad="small">
+        <Anchor href="/">
+          <Image
+            src="/hurricane_holes_logo.png"
+            alt="logo"
+            width="40"
+            height="30"
+          />
+        </Anchor>
+        <Box border={pathname === "/" ? borderActive : false}>
+          <Anchor href="/" hoverIndicator>
+            Home
+          </Anchor>
+        </Box>
+        <Box border={pathname === "/rigs" ? borderActive : false}>
+          <Anchor href="/rigs" hoverIndicator>
+            Rigs
+          </Anchor>
+        </Box>
+        <Box border={pathname === "/utilities" ? borderActive : false}>
+          <Anchor href="/utilities" hoverIndicator>
+            Utilities
+          </Anchor>
+        </Box>
+      </Nav>
+      <Box pad="medium">{children}</Box>
+      <Footer background="light-1" pad="medium">
+        <span>
+          Tel: (602) 943-3674 | Email:{" "}
+          <Anchor href="mailto:info@hurricaneholes.com" target="_top">
+            info@hurricaneholes.com
+          </Anchor>
+        </span>
+      </Footer>
     </div>
   );
 };
