@@ -4,7 +4,7 @@ import { Anchor, Heading, Paragraph } from "grommet";
 const Index = () => (
   <div>
     <Heading>Welcome to Hurricane Holes</Heading>
-    <Image src="/jeep.jpg" alt="Jeep photo" width="300" height="200" />
+    <Image src="/jeep.jpg" alt="Jeep photo" width="300" height="200" priority />
     <Paragraph>We drill holes in dirt.</Paragraph>
     <br />
     <Heading level="3">Contact</Heading>
